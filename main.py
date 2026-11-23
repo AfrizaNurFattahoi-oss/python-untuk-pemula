@@ -306,3 +306,18 @@ def greet_default(name="Alien"):
     print("Hello, I am %s" % name)
 
 greet_default()
+
+
+
+
+
+
+
+
+# Chapter 9 - PIP and Virtual Environments
+from colorama import Fore, Style, init
+
+init(autoreset=True)
+print(Fore.GREEN + "Colorama is installed inside the virtual environment.")
+print(Fore.RED + "This line is printed in red.")
+print(Style.BRIGHT + Fore.CYAN + "PIP and venv work correctly.")
