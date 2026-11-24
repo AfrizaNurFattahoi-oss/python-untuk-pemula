@@ -321,3 +321,62 @@ init(autoreset=True)
 print(Fore.GREEN + "Colorama is installed inside the virtual environment.")
 print(Fore.RED + "This line is printed in red.")
 print(Style.BRIGHT + Fore.CYAN + "PIP and venv work correctly.")
+
+
+
+
+
+
+
+# Chapter 12 - Classes and Objects
+
+# Class without constructor
+class Person:
+    pass
+
+p = Person()
+print(type(p))
+
+# Class with constructor (__init__)
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Rizqi", 30)
+print("Name: %s" % s1.name)
+print("Age: %d" % s1.age)
+
+# Class with method
+class Teacher:
+    def __init__(self, name, subject):
+        self.name = name
+        self.subject = subject
+
+    def introduce(self):
+        print("Hello, I am %s. I teach %s" % (self.name, self.subject))
+
+t1 = Teacher("Fika", "Python")
+t1.introduce()
+
+# Class attribute: shared by all objects
+class School:
+    country = "Indonesia"
+
+    def __init__(self, name):
+        self.name = name
+
+school1 = School("SMKN 2 Subang")
+school2 = School("SMKN 1 Subang")
+print("%s - %s" % (school1.name, school1.country))
+print("%s - %s" % (school2.name, school2.country))
+
+# Modifying object attribute
+s1.age = 31
+print("New age: %d" % s1.age)
+
+# Multiple objects from the same class
+s2 = Student("Yudi", 25)
+s3 = Student("Fika", 28)
+for student in [s1, s2, s3]:
+    print("%s is %d years old" % (student.name, student.age))
